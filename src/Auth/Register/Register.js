@@ -22,9 +22,6 @@ const Register = () => {
   return (
     <div className="hero w-full my-20">
       <div className="hero-content grid md:grid-cols-2 flex-col lg:flex-row-reverse">
-        <div className="text-center lg:text-left">
-          {/* <img className="w-3/4" src={img} alt="" /> */}
-        </div>
         <div className="card flex-shrink-0 py-20 w-full max-w-sm shadow-2xl bg-base-100">
           <h1 className="text-3xl  text-center font-bold">Register Now!</h1>
           <form onSubmit={handleSignUp} className="card-body">

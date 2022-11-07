@@ -23,36 +23,15 @@ const Login = () => {
     signIn(email, password)
       .then((result) => {
         const user = result.user;
-
-        const currentUser = {
-          email: user.email,
-        };
-
-        //get token
-        fetch("http://localhost:5000/jwt", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(currentUser),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            console.log(data);
-            localStorage.setItem("geniusToken", data.token);
-            navigate(from, { replace: true });
-          });
-
         console.log(user);
+        navigate(from, { replace: true });
       })
       .catch((error) => console.error(error));
   };
   return (
     <div className="hero w-full my-20">
       <div className="hero-content grid md:grid-cols-2 flex-col lg:flex-row-reverse">
-        <div className="text-center lg:text-left">
-          {/* <img className="w-3/4" src={img} alt="" /> */}
-        </div>
+        <div className="text-center lg:text-left"></div>
         <div className="card flex-shrink-0 py-20 w-full max-w-sm shadow-2xl bg-base-100">
           <h1 className="text-5xl  text-center font-bold">Login now!</h1>
           <form onSubmit={handleLogin} className="card-body">
@@ -88,9 +67,9 @@ const Login = () => {
             </div>
           </form>
           <p className="text-center">
-            New in genius car? please{" "}
+            New in WildLife studio? please{" "}
             <Link className="text-orange-600 font-bold" to="/register">
-              Sign Up
+              Register
             </Link>{" "}
           </p>
         </div>
