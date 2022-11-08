@@ -3,7 +3,7 @@ import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../../Auth/AuthProvider/AuthProvider';
 
 const ReviewsForm = () => {
-        const { _id, company, balance } = useLoaderData();
+        const { _id, company, name, balance, address } = useLoaderData();
         const { user } = useContext(AuthContext);
 
         const handlePlaceOrder = (event) => {
@@ -18,6 +18,7 @@ const ReviewsForm = () => {
             serviceId: _id,
             serviceName: name,
             balance,
+            names: name,
             customer: company,
             email,
             phone,
@@ -43,9 +44,10 @@ const ReviewsForm = () => {
 
     return (
       <div className="py-20 w-3/4 mx-auto">
+        <p className="text-orange-600 text-5xl py-5 text-center">Add Your Reviews </p>
         <form onSubmit={handlePlaceOrder}>
-          <h2 className="">service: {company} </h2>
-          <h2 className="text-orange-600">price: {balance} </h2>
+          <h2 className="">service Id: {_id} </h2>
+          <h2 className="text-primary-600">price: {balance} </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <input
               type="text"

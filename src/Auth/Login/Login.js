@@ -4,6 +4,8 @@ import {
   useLocation,
   useNavigate,
 } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 
 import { AuthContext } from "../AuthProvider/AuthProvider";
@@ -34,6 +36,7 @@ const Login = () => {
     .then((result) => {
         const user = result.user;
         console.log(user);
+         toast.success("Wow! logged Successfully.");
         navigate(from, { replace: true });
       })
       .catch((error) => console.error(error));
@@ -83,7 +86,11 @@ const Login = () => {
               Register
             </Link>{" "}
           </p>
-          <button onClick={handleGoogleSignIn} className="btn" > google login</button>
+          <button onClick={handleGoogleSignIn} className="btn">
+            {" "}
+            google login
+          </button>
+          <ToastContainer></ToastContainer>
         </div>
       </div>
     </div>

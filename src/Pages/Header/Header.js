@@ -24,12 +24,17 @@ const Header = () => {
       {user?.email ? (
         <>
           <li className="font-semibold">
-            <Link to="/orders">Orders</Link>{" "}
+            <Link to="/MyReviews">My reviews</Link>{" "}
           </li>
           <li className="font-semibold">
-            <button onClick={handleLogOut} className="btn btn-ghost">
-              LogOut
-            </button>
+            <Link to="/orders">Add reviews</Link>{" "}
+          </li>
+          <li className="font-semibold">
+            <Link>
+              <button onClick={handleLogOut} className="btn">
+                LogOut
+              </button>{" "}
+            </Link>
           </li>
         </>
       ) : (
