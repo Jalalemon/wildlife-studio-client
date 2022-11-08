@@ -9,7 +9,7 @@ import {
 import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Login = () => {
-  const { signIn } = useContext(AuthContext);
+  const { signIn, signInGoogle } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
   const from = location.state?.from?.pathname || "/";
@@ -28,6 +28,17 @@ const Login = () => {
       })
       .catch((error) => console.error(error));
   };
+
+  const handleGoogleSignIn = () =>{
+    signInGoogle()
+    .then((result) => {
+        const user = result.user;
+        console.log(user);
+        navigate(from, { replace: true });
+      })
+      .catch((error) => console.error(error));
+
+  }
   return (
     <div className="hero w-full my-20">
       <div className="hero-content grid md:grid-cols-2 flex-col lg:flex-row-reverse">
@@ -72,6 +83,7 @@ const Login = () => {
               Register
             </Link>{" "}
           </p>
+          <button onClick={handleGoogleSignIn} className="btn" > google login</button>
         </div>
       </div>
     </div>
