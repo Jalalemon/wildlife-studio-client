@@ -14,27 +14,27 @@ const ReviewsForm = () => {
           const phone = form.phone.value;
           const message = form.message.value;
 
-          const order = {
-            service: _id,
-            serviceName: company,
+          const allReview = {
+            serviceId: _id,
+            serviceName: name,
             balance,
-            customer: name,
+            customer: company,
             email,
             phone,
             message,
           };
-          fetch("http://localhost:5000/orders", {
+          fetch("http://localhost:5000/allReviews", {
             method: "POST",
             headers: {
               "content-type": "application/json",
             },
-            body: JSON.stringify(order),
+            body: JSON.stringify(allReview),
           })
             .then((res) => res.json())
             .then((data) => {
               console.log(data);
               if (data.acknowledged) {
-                alert("place order successsfully");
+                alert("your review added successsfully");
                 form.reset();
               }
             })
@@ -62,7 +62,7 @@ const ReviewsForm = () => {
             <input
               type="text"
               name="phone"
-              placeholder="your phone"
+              placeholder="your PhotoUrl"
               className="input input-bordered input-ghost w-full"
             />
             <input
@@ -77,7 +77,7 @@ const ReviewsForm = () => {
           <textarea
             name="message"
             className="textarea textarea-bordered w-full h-24"
-            placeholder="your message"
+            placeholder="your review"
           ></textarea>
           <input type="submit" className="btn" value="place your review" />
         </form>

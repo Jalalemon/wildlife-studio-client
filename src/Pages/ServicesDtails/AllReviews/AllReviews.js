@@ -1,59 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import AllReviewsTable from './AllReviewsTable';
 
 const AllReviews = () => {
+    const [allReviews, setAllreviews] = useState([])
+     useEffect(() => {
+       fetch(`http://localhost:5000/allReviews`)
+       .then(res => res.json())
+       .then(data => setAllreviews(data) )
+        }, [])
+
     return (
-      <div>
-        <div className="overflow-x-auto w-full">
-          <table className="table w-full">
-            <thead></thead>
-            <tbody>
-              <tr>
-                <th>
-                  <label>
-                    {/* <button
-                      onClick={() => handleDelete(_id)}
-                      className="btn btn-ghost bg-orange-300"
-                    >
-                      X
-                    </button> */}
-                  </label>
-                </th>
-                <td>
-                  <div className="flex items-center space-x-3">
-                    <div className="avatar">
-                      {/* <div className="rounded w-24 h-24">
-                        {orderService?.picture && (
-                          <img
-                            src={orderService.picture}
-                            alt="Avatar Tailwind CSS Component"
-                          />
-                        )}
-                      </div> */}
-                    </div>
-                    <div>
-                      {/* <div className="font-bold">{customer}</div>
-                      <div className="text-sm opacity-50">{phone} </div> */}
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  {/* {serviceName} */}
-                  <br />
-                  {/* <span className="badge badge-ghost badge-sm">{balance} </span> */}
-                </td>
-                <td>Indigo</td>
-                <th>
-                  {/* <button
-                    onClick={() => handleStatusUpdate(_id)}
-                    className="btn btn-ghost btn-xs"
-                  >
-                    {status ? status : "pending"}
-                  </button> */}
-                </th>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+      <div className="grid mx-auto gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        {allReviews.map((reviews) => (
+          <AllReviewsTable
+            key={reviews._id}
+            reviews={reviews}
+          ></AllReviewsTable>
+        ))}
       </div>
     );
 };
