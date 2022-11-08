@@ -19,7 +19,7 @@ const ServicesCart = ({service}) => {
             </p>
             <div className="card-actions justify-end">
               <Link to={`/servicesdetails/${_id}`}>
-                <button className="btn btn-primary">Book Now</button>
+                <button className="btn btn-primary">View Details</button>
               </Link>
             </div>
           </div>

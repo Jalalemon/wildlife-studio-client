@@ -5,8 +5,9 @@ import { AuthContext } from '../../../Auth/AuthProvider/AuthProvider';
 const AllReviewsTable = ({reviews}) => {
     const {user} = useContext(AuthContext)
     console.log(reviews);
-    const {phone, _id, message
+    const { _id,phone, message
 , email,serviceName, balance, name} = reviews;
+      
     return (
       <div>
         <div className="hero bg-base-200">
@@ -29,6 +30,9 @@ const AllReviewsTable = ({reviews}) => {
             <div className="">
               <h1 className="text-xl font-bold">Name: {serviceName}!</h1>
               <h1 className="text-xl text-orange-600"> Email: {email}!</h1>
+              <h1 className=""> service Id: {_id}!</h1>
+              <h1 className=""> balance: {balance}!</h1>
+            
               <p className="py-6">Review: {message}</p>
 
               <>

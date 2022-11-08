@@ -3,6 +3,8 @@ import Register from "../Auth/Register/Register";
 import AllPages from "../Pages/AllPages/AllPages";
 import Home from "../Pages/Home/Home";
 import AllReviews from "../Pages/ServicesDtails/AllReviews/AllReviews";
+import AllReviewsTable from "../Pages/ServicesDtails/AllReviews/AllReviewsTable";
+import ReviewsForm from "../Pages/ServicesDtails/ReviewsForm/ReviewsForm";
 import ServicesDetails from "../Pages/ServicesDtails/ServicesDetails";
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -22,13 +24,26 @@ const { default: Main } = require("../LayOut/Main");
          element: <AllPages></AllPages>,
        },
        {
-         path: "/allreviews",
-         element: <AllReviews></AllReviews>,
+         path: "/allreviewstable/:id",
+         loader: ({ params }) =>
+           fetch(`http://localhost:5000/allReviews/${params.id}`),
+         element: <AllReviewsTable></AllReviewsTable>,
+       },
+       {
+        path: '/allreviews',
+        element: <AllReviews></AllReviews>
+       },
+       {
+         path: "/ReviewsForm/:id",
+         loader: ({ params }) =>
+           fetch(`http://localhost:5000/allReviews/${params.id}`),
+         element: <ReviewsForm></ReviewsForm>,
        },
        {
          path: "/servicesDetails/:id",
          element: <ServicesDetails></ServicesDetails>,
-         loader: ({ params }) => fetch(`http://localhost:5000/allServices/${params.id}`),
+         loader: ({ params }) =>
+           fetch(`http://localhost:5000/allServices/${params.id}`),
        },
        {
          path: "/login",

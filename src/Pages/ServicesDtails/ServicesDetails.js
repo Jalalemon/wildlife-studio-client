@@ -5,7 +5,8 @@ import ReviewsForm from './ReviewsForm/ReviewsForm';
 const ServicesDetails = () => {
     const detailsServices = useLoaderData();
     console.log(detailsServices);
-    const { name, about, picture, balance } = detailsServices;
+    const { name,_id, about, picture, balance } = detailsServices;
+    console.log(_id );
 
     return (
       <div>
@@ -27,14 +28,17 @@ const ServicesDetails = () => {
           </div>
         </div>
         <div className="text-center">
-          <Link to='/allreviews'>
+          <Link to={`/allreviews`}>
             {" "}
             <button className="btn btn-secondary">All Reviews </button>
           </Link>
           <p className="text-2xl text-orange-600 font-semibold">
             Service: {name}{" "}
           </p>
-          <ReviewsForm></ReviewsForm>
+          {/* <ReviewsForm></ReviewsForm> */}
+          <Link to={`/ReviewsForm/${_id}`}>
+            <button className="btn btn-primary my-5">Add Your Review</button>
+          </Link>
         </div>
       </div>
     );
