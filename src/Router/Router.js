@@ -3,6 +3,7 @@ import PrivateRout from "../Auth/PrivateRout/PrivateRoute";
 import Register from "../Auth/Register/Register";
 import AddServices from "../Pages/AddServices/AddServices";
 import AllPages from "../Pages/AllPages/AllPages";
+import Blogs from "../Pages/AllPages/Blogs/Blogs";
 import Home from "../Pages/Home/Home";
 import MyReviews from "../Pages/MyReviews/MyReviews";
 import AllReviews from "../Pages/ServicesDtails/AllReviews/AllReviews";
@@ -69,6 +70,10 @@ const { default: Main } = require("../LayOut/Main");
        {
          path: "/login",
          element: <Login></Login>,
+       },
+       {
+         path: "/blogs",
+         element: <Blogs></Blogs>,
        },
        {
          path: "/myreviews",
