@@ -5,9 +5,13 @@ import "react-photo-view/dist/react-photo-view.css";
 import UseTitle from '../assets/UseTitle';
 const ServicesCart = ({service}) => {
 
+    // services cart
+    //
+    
     const {name,phone, about,picture,email, message, _id, balance} = service;
     return (
       <div>
+
         <div className="card mb-5 card-compact w-96 mx-auto bg-base-100 shadow-xl">
           <figure>
             {picture ? (

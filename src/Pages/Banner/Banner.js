@@ -8,6 +8,7 @@ import img6 from "../../assets/banner/6.jpeg";
 import UseTitle from "../../assets/UseTitle";
 import BannerItem from "./BannerItem";
 
+// banner 
 
 const Banner = () => {
     UseTitle('banner')
@@ -50,7 +51,10 @@ const Banner = () => {
     },
   ];
   return (
-  
+    
+  // banner item map
+  //
+
       <div className="carousel py-10 w-full">
         {bannerData.map((slide) => (
           <BannerItem key={slide.id} slide={slide}></BannerItem>

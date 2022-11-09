@@ -2,7 +2,10 @@ import React from 'react';
 import image from '../../assets/nav/nav.jpg'
 import UseTitle from '../../assets/UseTitle';
 const Board = () => {
-    UseTitle('board')
+    UseTitle('board');
+
+// board with image and title
+//
     return (
       <div className="grid lg:grid-cols-2 py-10" data-theme="lemonade">
         <div className=" mx-auto">

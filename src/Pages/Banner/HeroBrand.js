@@ -3,6 +3,9 @@ import UseTitle from '../../assets/UseTitle';
 
 const HeroBrand = () => {
     UseTitle('herobrand')
+
+// hero brand background
+
     return (
       <div className=" my-10 mx-auto">
         <div

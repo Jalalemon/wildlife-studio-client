@@ -15,7 +15,7 @@ const AllReviews = () => {
 
     return (
       <div className="grid mx-auto gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {allReviews.map((reviews) => (
+        {allReviews?.map((reviews) => (
           <AllReviewsTable
             key={reviews._id}
             reviews={reviews}

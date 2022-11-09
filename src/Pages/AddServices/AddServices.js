@@ -3,10 +3,16 @@ import context from 'react-bootstrap/esm/AccordionContext';
 import { useLoaderData } from 'react-router-dom';
 import UseTitle from '../../assets/UseTitle';
 import { AuthContext } from '../../Auth/AuthProvider/AuthProvider';
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+// addding services
+
 
 const AddServices = () => {
     UseTitle('addServices')
  const {user} = useContext(AuthContext);
+
+ // service loader data
 
  const addServices = useLoaderData();
  console.log(addServices);
@@ -18,7 +24,9 @@ const AddServices = () => {
           const phone = form.phone.value;
           const balance = form.balance.value;
           const message = form.message.value;
-
+//
+// service name and details
+//
           const addServices = {
             name: name,
             email: email,
@@ -27,6 +35,10 @@ const AddServices = () => {
             about: message,
             message,
           };
+
+// service create 
+//
+
           fetch("http://localhost:5000/services", {
             method: "POST",
             headers: {
@@ -38,20 +50,21 @@ const AddServices = () => {
             .then((data) => {
               console.log(data);
               if (data.acknowledged) {
-                alert("your review added successsfully");
+                toast("your review added successfully");
                 form.reset();
               }
             })
             .catch((error) => console.error(error));
         };
 
+
+        
         return (
           <div className="py-20 w-3/4 mx-auto">
             <p className="text-orange-600 text-5xl py-5 text-center">
               Add Your Service{" "}
             </p>
             <form onSubmit={handleAddServices}>
-             
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input
                   type="text"
@@ -91,6 +104,7 @@ const AddServices = () => {
                 placeholder="service description"
               ></textarea>
               <input type="submit" className="btn" value="place your service" />
+              <ToastContainer />
             </form>
           </div>
         );

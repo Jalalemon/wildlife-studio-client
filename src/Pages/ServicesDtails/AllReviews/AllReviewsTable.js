@@ -8,7 +8,10 @@ const AllReviewsTable = ({reviews}) => {
     const {user} = useContext(AuthContext)
     const { _id,phone, message
 , email,serviceName, balance, name} = reviews;
-      
+ 
+// allReviews
+//
+
     return (
       <div>
         <div className="hero bg-base-200">

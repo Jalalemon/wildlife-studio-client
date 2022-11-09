@@ -2,7 +2,11 @@ import React from 'react';
 import UseTitle from '../../assets/UseTitle';
 
 const Steps = () => {
-    UseTitle('steps')
+    UseTitle('steps');
+
+    // steps added
+    //
+    
     return (
       <div>
         <ul className="steps">

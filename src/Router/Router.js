@@ -1,6 +1,8 @@
+
 import Login from "../Auth/Login/Login";
 import PrivateRout from "../Auth/PrivateRout/PrivateRoute";
 import Register from "../Auth/Register/Register";
+import SignUp from "../Auth/Register/SignUp";
 import AddServices from "../Pages/AddServices/AddServices";
 import AllPages from "../Pages/AllPages/AllPages";
 import Blogs from "../Pages/AllPages/Blogs/Blogs";
@@ -26,6 +28,10 @@ const { default: Main } = require("../LayOut/Main");
        {
          path: "/allPages",
          element: <AllPages></AllPages>,
+       },
+       {
+         path: "/signup",
+         element: <SignUp></SignUp>,
        },
        //    {
        //      path: "/allreviewstable/:id",
@@ -75,6 +81,7 @@ const { default: Main } = require("../LayOut/Main");
          path: "/blogs",
          element: <Blogs></Blogs>,
        },
+     
        {
          path: "/myreviews",
          element: (

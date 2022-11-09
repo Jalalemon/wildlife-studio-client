@@ -2,12 +2,17 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import UseTitle from '../../assets/UseTitle';
 import { AuthContext } from '../../Auth/AuthProvider/AuthProvider';
-
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const EditMyReviews = ({ reviews,handleUpdate, handleDelete}) => {
     UseTitle('edirmyReviews')
   const { user } = useContext(AuthContext);
-  console.log(reviews);
+
   const { _id, phone, message, email, serviceName, balance, name } = reviews;
+
+
+// editing reviews
+
 
   return (
     <div>
@@ -39,7 +44,12 @@ const EditMyReviews = ({ reviews,handleUpdate, handleDelete}) => {
             <div className="grid grid-cols-2">
               <Link to="">
                 {" "}
-                <button onClick={() => handleUpdate()} className="btn btn-primary">Edit Review</button>
+                <button
+                  onClick={() => handleUpdate()}
+                  className="btn btn-primary"
+                >
+                  Edit Review
+                </button>
               </Link>
               <Link to="">
                 {" "}
@@ -50,6 +60,7 @@ const EditMyReviews = ({ reviews,handleUpdate, handleDelete}) => {
                   {" "}
                   Delete Review
                 </button>
+           <ToastContainer></ToastContainer>
               </Link>
             </div>
           </div>

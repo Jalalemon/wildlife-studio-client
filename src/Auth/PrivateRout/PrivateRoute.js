@@ -6,9 +6,13 @@ const PrivateRout = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
   const location = useLocation();
 
+  // loading
+
   if (loading) {
-    return <h1 className="text-5xl">loading....</h1>;
+    return <button className="btn loading">loading...</button>;
   }
+
+  // navigation
 
   if (user) {
     return children;

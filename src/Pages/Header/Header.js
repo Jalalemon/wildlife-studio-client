@@ -3,6 +3,12 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/nav/nav.jpg";
 import UseTitle from "../../assets/UseTitle";
 import { AuthContext } from "../../Auth/AuthProvider/AuthProvider";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+
+// header section
+//
 
 const Header = () => {
     UseTitle('header')
@@ -11,9 +17,13 @@ const Header = () => {
   const handleLogOut = () => {
     logOut()
       .then()
+      toast.success('logOut successfully')
       .catch((error) => console.error(error));
   };
 
+  // header
+  //
+toast('header')
   const menuItems = (
     <>
       <li className="font-semibold">
@@ -21,6 +31,7 @@ const Header = () => {
       </li>
       <li className="font-semibold">
         <Link to="/blogs">Blogs</Link>{" "}
+        <ToastContainer></ToastContainer>
       </li>
 
       <li className="font-semibold">
@@ -28,11 +39,13 @@ const Header = () => {
       </li>
       <li className="font-semibold">
         <Link to="/addservices">Add Services</Link>{" "}
+        <ToastContainer></ToastContainer>
       </li>
       {user?.email ? (
         <>
           <li className="font-semibold">
             <Link to="/MyReviews">My reviews</Link>{" "}
+            <ToastContainer></ToastContainer>
           </li>
 
           <li className="font-semibold">
@@ -40,6 +53,7 @@ const Header = () => {
               <button onClick={handleLogOut} className="btn">
                 LogOut
               </button>{" "}
+              <ToastContainer></ToastContainer>
             </Link>
           </li>
         </>
@@ -53,6 +67,9 @@ const Header = () => {
       </li>
     </>
   );
+
+// heading added
+
   return (
     <div className="pt-5" data-theme="dark">
       <div className="navbar h-20 mb-12 bg-base-100">
@@ -88,7 +105,7 @@ const Header = () => {
           <ul className="menu menu-horizontal p-0">{menuItems}</ul>
         </div>
         <div className="navbar-end">
-          <button className="btn btn-outline btn-warning">Appointment</button>
+          <button className="btn btn-outline btn-warning">all Photo</button>
         </div>
       </div>
     </div>

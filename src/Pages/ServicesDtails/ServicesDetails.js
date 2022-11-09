@@ -4,12 +4,19 @@ import ReviewsForm from './ReviewsForm/ReviewsForm';
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
 import UseTitle from '../../assets/UseTitle';
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const ServicesDetails = () => {
     UseTitle('servicedetaild')
     const detailsServices = useLoaderData();
     console.log(detailsServices);
     const { name,_id, about,email, picture, balance } = detailsServices;
     console.log(_id );
+
+    toast('service details')
+    // service details
+    //
 
     return (
       <div className="w-410 h-500">
@@ -19,6 +26,7 @@ const ServicesDetails = () => {
               <img src={picture} alt="" />
             </PhotoView>
           </PhotoProvider>
+
 
           {/* <figure>
             <img className="w-full" src={picture} alt="Shoes" />
@@ -48,6 +56,7 @@ const ServicesDetails = () => {
           {/* <ReviewsForm></ReviewsForm> */}
           <Link to={`/ReviewsForm/${_id}`}>
             <button className="btn btn-primary my-5">Add Your Review</button>
+            <ToastContainer></ToastContainer>
           </Link>
         </div>
       </div>

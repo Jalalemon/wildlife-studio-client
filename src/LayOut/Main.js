@@ -4,8 +4,10 @@ import UseTitle from '../assets/UseTitle';
 import Footer from '../Pages/Footer/Footer';
 import Header from '../Pages/Header/Header';
 
+// main page outlet
+
 const Main = () => {
-     UseTitle('main')
+     UseTitle('main');
     return (
         <div>
            <Header></Header>

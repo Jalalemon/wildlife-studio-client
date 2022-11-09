@@ -3,6 +3,9 @@ import { useLoaderData } from 'react-router-dom';
 import UseTitle from '../../../assets/UseTitle';
 import { AuthContext } from '../../../Auth/AuthProvider/AuthProvider';
 
+
+// reviews form
+// 
 const ReviewsForm = () => {
     UseTitle('reviewsForm')
         const { _id, company, name, balance, address } = useLoaderData();
@@ -43,7 +46,9 @@ const ReviewsForm = () => {
             })
             .catch((error) => console.error(error));
         };
-
+// 
+// services section
+//
     return (
       <div className="py-20 w-3/4 mx-auto">
         <p className="text-orange-600 text-5xl py-5 text-center">
