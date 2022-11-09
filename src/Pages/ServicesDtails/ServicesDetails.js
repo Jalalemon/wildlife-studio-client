@@ -1,21 +1,29 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import ReviewsForm from './ReviewsForm/ReviewsForm';
-
+import { PhotoProvider, PhotoView } from "react-photo-view";
+import "react-photo-view/dist/react-photo-view.css";
 const ServicesDetails = () => {
     const detailsServices = useLoaderData();
     console.log(detailsServices);
-    const { name,_id, about, picture, balance } = detailsServices;
+    const { name,_id, about,email, picture, balance } = detailsServices;
     console.log(_id );
 
     return (
-      <div>
+      <div className="w-410 h-500">
         <div className="card mb-5 card-compact w-96 mx-auto bg-base-100 shadow-xl">
-          <figure>
+          <PhotoProvider>
+            <PhotoView src={picture}>
+              <img src={picture} alt="" />
+            </PhotoView>
+          </PhotoProvider>
+
+          {/* <figure>
             <img className="w-full" src={picture} alt="Shoes" />
-          </figure>
+          </figure> */}
           <div className="card-body">
             <h2 className="card-title">{name}</h2>
+            <h2 className="text-xl">{email}</h2>
             <p className="text-2xl text-orange-600 font-semibold">
               price: {balance}{" "}
             </p>

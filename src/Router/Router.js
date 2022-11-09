@@ -1,6 +1,7 @@
 import Login from "../Auth/Login/Login";
 import PrivateRout from "../Auth/PrivateRout/PrivateRoute";
 import Register from "../Auth/Register/Register";
+import AddServices from "../Pages/AddServices/AddServices";
 import AllPages from "../Pages/AllPages/AllPages";
 import Home from "../Pages/Home/Home";
 import MyReviews from "../Pages/MyReviews/MyReviews";
@@ -25,15 +26,29 @@ const { default: Main } = require("../LayOut/Main");
          path: "/allPages",
          element: <AllPages></AllPages>,
        },
-       {
-         path: "/allreviewstable/:id",
-         loader: ({ params }) =>
-           fetch(`http://localhost:5000/allReviews/${params.id}`),
-         element: <AllReviewsTable></AllReviewsTable>,
-       },
+       //    {
+       //      path: "/allreviewstable/:id",
+       //      loader: ({ params }) =>
+       //        fetch(`http://localhost:5000/allReviews/${params.id}`),
+       //      element: <AllReviewsTable></AllReviewsTable>,
+       //    },
        {
          path: "/allreviews",
          element: <AllReviews></AllReviews>,
+       },
+       {
+         path: "/addServices/:id",
+         loader: ({ params }) =>
+           fetch(`http://localhost:5000/services/${params.id}`),
+         element: <AddServices></AddServices>,
+       },
+       {
+         path: "/addServices",
+         element: (
+           <PrivateRout>
+             <AddServices></AddServices>
+           </PrivateRout>
+         ),
        },
        {
          path: "/ReviewsForm/:id",

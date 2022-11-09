@@ -1,10 +1,9 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../../Auth/AuthProvider/AuthProvider';
 
 const AllReviewsTable = ({reviews}) => {
     const {user} = useContext(AuthContext)
-    console.log(reviews);
     const { _id,phone, message
 , email,serviceName, balance, name} = reviews;
       

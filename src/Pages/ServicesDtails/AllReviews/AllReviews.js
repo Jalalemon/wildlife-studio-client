@@ -7,7 +7,9 @@ const AllReviews = () => {
        fetch(`http://localhost:5000/allReviews`)
        .then(res => res.json())
        .then(data => setAllreviews(data) )
-        }, [])
+        }, []);
+
+        
 
     return (
       <div className="grid mx-auto gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
