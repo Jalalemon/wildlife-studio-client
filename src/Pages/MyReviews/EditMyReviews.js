@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import UseTitle from '../../assets/UseTitle';
 import { AuthContext } from '../../Auth/AuthProvider/AuthProvider';
 
 const EditMyReviews = ({ reviews,handleUpdate, handleDelete}) => {
+    UseTitle('edirmyReviews')
   const { user } = useContext(AuthContext);
   console.log(reviews);
   const { _id, phone, message, email, serviceName, balance, name } = reviews;
@@ -37,12 +39,7 @@ const EditMyReviews = ({ reviews,handleUpdate, handleDelete}) => {
             <div className="grid grid-cols-2">
               <Link to="">
                 {" "}
-                <button
-                  onClick={() => handleUpdate()}
-                  className="btn btn-primary"
-                >
-                  Edit Review
-                </button>
+                <button onClick={() => handleUpdate()} className="btn btn-primary">Edit Review</button>
               </Link>
               <Link to="">
                 {" "}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import UseTitle from '../../assets/UseTitle';
 import Services from '../../Services/Services';
 import Banner from '../Banner/Banner';
 import Carousel from '../Banner/Carousel';
@@ -9,6 +10,8 @@ import Board from '../Board/Board';
 
 
 const Home = () => {
+    UseTitle('home');
+    
     return (
       <div className="mx-auto text-center">
         <HeroBrand></HeroBrand>

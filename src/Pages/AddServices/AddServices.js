@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import context from 'react-bootstrap/esm/AccordionContext';
 import { useLoaderData } from 'react-router-dom';
+import UseTitle from '../../assets/UseTitle';
 import { AuthContext } from '../../Auth/AuthProvider/AuthProvider';
 
 const AddServices = () => {
+    UseTitle('addServices')
  const {user} = useContext(AuthContext);
 
  const addServices = useLoaderData();

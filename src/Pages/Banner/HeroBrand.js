@@ -1,6 +1,8 @@
 import React from 'react';
+import UseTitle from '../../assets/UseTitle';
 
 const HeroBrand = () => {
+    UseTitle('herobrand')
     return (
       <div className=" my-10 mx-auto">
         <div

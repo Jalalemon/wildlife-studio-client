@@ -3,7 +3,9 @@ import { Link, useLoaderData } from 'react-router-dom';
 import ReviewsForm from './ReviewsForm/ReviewsForm';
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
+import UseTitle from '../../assets/UseTitle';
 const ServicesDetails = () => {
+    UseTitle('servicedetaild')
     const detailsServices = useLoaderData();
     console.log(detailsServices);
     const { name,_id, about,email, picture, balance } = detailsServices;

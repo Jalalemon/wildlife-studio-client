@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import UseTitle from '../assets/UseTitle';
 import ServicesCart from './ServicesCart';
 
 const Services = () => {
+    UseTitle('services')
 
     const [services, setServices] =useState([]);
     useEffect(() =>{

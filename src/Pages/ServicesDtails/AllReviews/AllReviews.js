@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import UseTitle from '../../../assets/UseTitle';
 import AllReviewsTable from './AllReviewsTable';
 
 const AllReviews = () => {
+    UseTitle('allreviews')
     const [allReviews, setAllreviews] = useState([])
      useEffect(() => {
        fetch(`http://localhost:5000/allReviews`)
@@ -9,7 +11,7 @@ const AllReviews = () => {
        .then(data => setAllreviews(data) )
         }, []);
 
-        
+
 
     return (
       <div className="grid mx-auto gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">

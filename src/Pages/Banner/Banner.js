@@ -5,10 +5,12 @@ import img3 from "../../assets/banner/3.jpeg";
 import img4 from "../../assets/banner/4.jpeg";
 import img5 from "../../assets/banner/5.jpeg";
 import img6 from "../../assets/banner/6.jpeg";
+import UseTitle from "../../assets/UseTitle";
 import BannerItem from "./BannerItem";
 
 
 const Banner = () => {
+    UseTitle('banner')
   const bannerData = [
     {
       image: img1,

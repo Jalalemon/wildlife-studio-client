@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import UseTitle from '../../../assets/UseTitle';
 import { AuthContext } from '../../../Auth/AuthProvider/AuthProvider';
 
 const ReviewsForm = () => {
+    UseTitle('reviewsForm')
         const { _id, company, name, balance, address } = useLoaderData();
         const { user } = useContext(AuthContext);
 

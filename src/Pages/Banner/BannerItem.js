@@ -1,6 +1,8 @@
 import React from "react";
+import UseTitle from "../../assets/UseTitle";
 import './Banner.css'
 const BannerItem = ({ slide }) => {
+    UseTitle('bannerItem')
   const { image, id, prev, next } = slide;
   return (
     <div className="stack w-3/4">

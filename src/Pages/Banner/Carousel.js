@@ -1,6 +1,8 @@
 import React from 'react';
+import UseTitle from '../../assets/UseTitle';
 
 const Carousel = () => {
+    UseTitle('carousel')
     return (
       <div>
         <div className="carousel w-full">

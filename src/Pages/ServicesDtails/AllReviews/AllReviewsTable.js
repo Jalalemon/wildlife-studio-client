@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import UseTitle from '../../../assets/UseTitle';
 import { AuthContext } from '../../../Auth/AuthProvider/AuthProvider';
 
 const AllReviewsTable = ({reviews}) => {
+    UseTitle('allreviewsTitle')
     const {user} = useContext(AuthContext)
     const { _id,phone, message
 , email,serviceName, balance, name} = reviews;

@@ -2,7 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
+import UseTitle from '../assets/UseTitle';
 const ServicesCart = ({service}) => {
+
     const {name,phone, about,picture,email, message, _id, balance} = service;
     return (
       <div>
