@@ -2,7 +2,8 @@ import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import UseTitle from '../../../assets/UseTitle';
 import { AuthContext } from '../../../Auth/AuthProvider/AuthProvider';
-
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // reviews form
 // 
@@ -32,7 +33,7 @@ const ReviewsForm = () => {
             message,
 
           };
-          fetch("http://localhost:5000/allReviews", {
+          fetch("https://wildlife-studio-server-jalalemon.vercel.app/allReviews", {
             method: "POST",
             headers: {
               "content-type": "application/json",
@@ -43,7 +44,7 @@ const ReviewsForm = () => {
             .then((data) => {
               console.log(data);
               if (data.acknowledged) {
-                alert("your review added successsfully");
+                toast.success("your review added successsfully");
                 form.reset();
               }
             })
@@ -94,6 +95,7 @@ const ReviewsForm = () => {
             placeholder="your review"
           ></textarea>
           <input type="submit" className="btn" value="place your review" />
+          <ToastContainer></ToastContainer>
         </form>
       </div>
     );

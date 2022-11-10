@@ -19,7 +19,7 @@ console.log(email);
       <div className="hero bg-base-200">
         <div className="hero-content flex-col">
           <>
-            {user?.photoURL ? (
+            {!phone? (
               <img
                 src={user?.photoURl}
                 alt=""
@@ -60,7 +60,7 @@ console.log(email);
                   {" "}
                   Delete Review
                 </button>
-           <ToastContainer></ToastContainer>
+                <ToastContainer></ToastContainer>
               </Link>
             </div>
           </div>

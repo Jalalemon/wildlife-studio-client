@@ -36,7 +36,7 @@ const { default: Main } = require("../LayOut/Main");
        //    {
        //      path: "/allreviewstable/:id",
        //      loader: ({ params }) =>
-       //        fetch(`http://localhost:5000/allReviews/${params.id}`),
+       //        fetch(`https://wildlife-studio-server-jalalemon.vercel.app/allReviews/${params.id}`),
        //      element: <AllReviewsTable></AllReviewsTable>,
        //    },
        {
@@ -46,7 +46,7 @@ const { default: Main } = require("../LayOut/Main");
        {
          path: "/addServices/:id",
          loader: ({ params }) =>
-           fetch(`http://localhost:5000/services/${params.id}`),
+           fetch(`https://wildlife-studio-server-jalalemon.vercel.app/services/${params.id}`),
          element: <AddServices></AddServices>,
        },
        {
@@ -57,21 +57,32 @@ const { default: Main } = require("../LayOut/Main");
            </PrivateRout>
          ),
        },
+      //  {
+      //    path: "/ReviewsForm/:id",
+      //    loader: ({ params }) =>
+      //      fetch(`https://wildlife-studio-server-jalalemon.vercel.app/allReviews/${params.id}`),
+      //    element: (
+      //      <PrivateRout>
+      //        <ReviewsForm></ReviewsForm>
+      //      </PrivateRout>
+      //    ),
+      //  },
        {
          path: "/ReviewsForm/:id",
          loader: ({ params }) =>
-           fetch(`http://localhost:5000/allReviews/${params.id}`),
+           fetch(`https://wildlife-studio-server-jalalemon.vercel.app/allServices/${params.id}`),
          element: (
            <PrivateRout>
              <ReviewsForm></ReviewsForm>
            </PrivateRout>
          ),
        },
+
        {
          path: "/servicesDetails/:id",
          element: <ServicesDetails></ServicesDetails>,
          loader: ({ params }) =>
-           fetch(`http://localhost:5000/allServices/${params.id}`),
+           fetch(`https://wildlife-studio-server-jalalemon.vercel.app/allServices/${params.id}`),
        },
        {
          path: "/login",
@@ -81,7 +92,7 @@ const { default: Main } = require("../LayOut/Main");
          path: "/blogs",
          element: <Blogs></Blogs>,
        },
-     
+
        {
          path: "/myreviews",
          element: (

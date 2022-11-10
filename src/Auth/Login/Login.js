@@ -22,7 +22,7 @@ const Login = () => {
 
 
   const handleLogin = (event) => {
-   toast.success("congrats! logged successfully");
+  
     event.preventDefault();
     const form = event.target;
     const password = form.password.value;
@@ -39,7 +39,7 @@ toast.success("congrats! logged successfully");
 
         //get token
 
-        fetch("http://localhost:5000/jwt", {
+        fetch("https://wildlife-studio-server-jalalemon.vercel.app/jwt", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -53,6 +53,7 @@ toast.success("congrats! logged successfully");
           
             localStorage.setItem("wildlife-token", data.token);
           });
+            navigate(from, { replace: true });
       })
       .catch((error) => console.error(error));
   };

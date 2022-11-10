@@ -5,7 +5,7 @@ import ServicesCart from '../../Services/ServicesCart';
 const AllPages = () => {
     const [allServices, setAllServices] =useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/allServices")
+        fetch("https://wildlife-studio-server-jalalemon.vercel.app/allServices")
         .then(res => res.json())
         .then(data => setAllServices(data))
     }, [])

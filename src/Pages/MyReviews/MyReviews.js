@@ -19,14 +19,14 @@ const MyReviews = () => {
 
 
     useEffect(() => {
-      fetch(`http://localhost:5000/allReviews?email=${user?.email}`)
-      // fetch("http://localhost:5000/allReviews?email=web2@ph.com")
+      fetch(`https://wildlife-studio-server-jalalemon.vercel.app/allReviews?email=${user?.email}`)
+      // fetch("https://wildlife-studio-server-jalalemon.vercel.app/allReviews?email=web2@ph.com")
         .then((res) => res.json())
         .then((data) => setAllreviews(data));
     } , [user?.email])
     useEffect(() => {
         fetch(
-          `http://localhost:5000/allReviews?email=${user?.email}`,
+          `https://wildlife-studio-server-jalalemon.vercel.app/allReviews?email=${user?.email}`,
 
 
           {
@@ -53,7 +53,7 @@ const MyReviews = () => {
 const handleDelete = (id) => {
   const proceed = window.confirm("are your sure want to delete?");
   if (proceed) {
-    fetch(`http://localhost:5000/allReviews/${id}`, {
+    fetch(`https://wildlife-studio-server-jalalemon.vercel.app/allReviews/${id}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("wildlife-token")}`,
@@ -74,7 +74,7 @@ const handleDelete = (id) => {
 
 
     //  const handleUpdate = (id) => {
-    //    fetch(`http://localhost:5000/allReviews/${id}`, {
+    //    fetch(`https://wildlife-studio-server-jalalemon.vercel.app/allReviews/${id}`, {
     //      method: "PUT",
     //      headers: {
     //        "content-type": "application/json",

@@ -6,7 +6,7 @@ const AllReviews = () => {
     UseTitle('allreviews')
     const [allReviews, setAllreviews] = useState([])
      useEffect(() => {
-       fetch(`http://localhost:5000/allReviews`)
+       fetch(`https://wildlife-studio-server-jalalemon.vercel.app/allReviews`)
        .then(res => res.json())
        .then(data => setAllreviews(data) )
         }, []);
