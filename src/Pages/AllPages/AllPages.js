@@ -5,7 +5,7 @@ import ServicesCart from '../../Services/ServicesCart';
 const AllPages = () => {
     const [allServices, setAllServices] =useState([]);
     useEffect(() => {
-        fetch("https://wildlife-studio-server-jalalemon.vercel.app/allServices")
+        fetch("https://wildlife-studio-server.vercel.app/allServices")
         .then(res => res.json())
         .then(data => setAllServices(data))
     }, [])
@@ -13,7 +13,7 @@ const AllPages = () => {
       <div>
         <div className="grid mx-auto gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {
-          allServices.map((service) => (
+          allServices?.map((service) => (
             <ServicesCart key={service._id} service={service}></ServicesCart>
           ))
           }

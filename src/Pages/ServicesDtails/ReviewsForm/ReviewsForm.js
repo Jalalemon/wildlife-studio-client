@@ -33,7 +33,7 @@ const ReviewsForm = () => {
             message,
 
           };
-          fetch("https://wildlife-studio-server-jalalemon.vercel.app/allReviews", {
+          fetch("https://wildlife-studio-server.vercel.app/allReviews", {
             method: "POST",
             headers: {
               "content-type": "application/json",

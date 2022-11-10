@@ -39,7 +39,7 @@ toast.success("congrats! logged successfully");
 
         //get token
 
-        fetch("https://wildlife-studio-server-jalalemon.vercel.app/jwt", {
+        fetch("https://wildlife-studio-server.vercel.app/jwt", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -49,9 +49,9 @@ toast.success("congrats! logged successfully");
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
-            navigate(from, { replace: true });
-          
+            
             localStorage.setItem("wildlife-token", data.token);
+            navigate(from, { replace: true });
           });
             navigate(from, { replace: true });
       })

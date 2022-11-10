@@ -7,7 +7,7 @@ const Services = () => {
 
     const [services, setServices] =useState([]);
     useEffect(() =>{
-        fetch("https://wildlife-studio-server-jalalemon.vercel.app/services")
+        fetch("https://wildlife-studio-server.vercel.app/services")
           .then((res) => res.json())
           .then((data) => setServices(data));
     } , [])

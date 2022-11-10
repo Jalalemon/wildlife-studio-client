@@ -3,15 +3,19 @@ import UseTitle from '../../../assets/UseTitle';
 import AllReviewsTable from './AllReviewsTable';
 
 const AllReviews = () => {
-    UseTitle('allreviews')
-    const [allReviews, setAllreviews] = useState([])
+    UseTitle('allreview');
+
+    const [allReviews, setAllreviews] = useState([]);
+
      useEffect(() => {
-       fetch(`https://wildlife-studio-server-jalalemon.vercel.app/allReviews`)
-       .then(res => res.json())
-       .then(data => setAllreviews(data) )
+       fetch(`https://wildlife-studio-server.vercel.app/allReviews`, {
+         headers: {
+           authorization: `Bearer ${localStorage.getItem("wildlife-token")}`,
+         },
+       })
+         .then((res) => res.json())
+         .then((data) => setAllreviews(data));
         }, []);
-
-
 
     return (
       <div className="grid mx-auto gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">

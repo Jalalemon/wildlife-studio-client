@@ -39,7 +39,7 @@ const AddServices = () => {
 // service create 
 //
 
-          fetch("https://wildlife-studio-server-jalalemon.vercel.app/services", {
+          fetch("https://wildlife-studio-server.vercel.app/services", {
             method: "POST",
             headers: {
               "content-type": "application/json",

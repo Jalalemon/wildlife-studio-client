@@ -36,7 +36,7 @@ const { default: Main } = require("../LayOut/Main");
        //    {
        //      path: "/allreviewstable/:id",
        //      loader: ({ params }) =>
-       //        fetch(`https://wildlife-studio-server-jalalemon.vercel.app/allReviews/${params.id}`),
+       //        fetch(`https://wildlife-studio-server.vercel.app/allReviews/${params.id}`),
        //      element: <AllReviewsTable></AllReviewsTable>,
        //    },
        {
@@ -46,7 +46,7 @@ const { default: Main } = require("../LayOut/Main");
        {
          path: "/addServices/:id",
          loader: ({ params }) =>
-           fetch(`https://wildlife-studio-server-jalalemon.vercel.app/services/${params.id}`),
+           fetch(`https://wildlife-studio-server.vercel.app/services/${params.id}`),
          element: <AddServices></AddServices>,
        },
        {
@@ -60,7 +60,7 @@ const { default: Main } = require("../LayOut/Main");
       //  {
       //    path: "/ReviewsForm/:id",
       //    loader: ({ params }) =>
-      //      fetch(`https://wildlife-studio-server-jalalemon.vercel.app/allReviews/${params.id}`),
+      //      fetch(`https://wildlife-studio-server.vercel.app/allReviews/${params.id}`),
       //    element: (
       //      <PrivateRout>
       //        <ReviewsForm></ReviewsForm>
@@ -70,7 +70,7 @@ const { default: Main } = require("../LayOut/Main");
        {
          path: "/ReviewsForm/:id",
          loader: ({ params }) =>
-           fetch(`https://wildlife-studio-server-jalalemon.vercel.app/allServices/${params.id}`),
+           fetch(`https://wildlife-studio-server.vercel.app/allServices/${params.id}`),
          element: (
            <PrivateRout>
              <ReviewsForm></ReviewsForm>
@@ -82,7 +82,7 @@ const { default: Main } = require("../LayOut/Main");
          path: "/servicesDetails/:id",
          element: <ServicesDetails></ServicesDetails>,
          loader: ({ params }) =>
-           fetch(`https://wildlife-studio-server-jalalemon.vercel.app/allServices/${params.id}`),
+           fetch(`https://wildlife-studio-server.vercel.app/allServices/${params.id}`),
        },
        {
          path: "/login",

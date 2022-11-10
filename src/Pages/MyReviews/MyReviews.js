@@ -5,45 +5,37 @@ import AllReviewsTable from '../ServicesDtails/AllReviews/AllReviewsTable';
 import EditMyReviews from './EditMyReviews';
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from 'react-router-dom';
 // my reviews
 //
 
 const MyReviews = () => {
-
+ const navigate = useNavigate();
     const {logOut} = useContext(AuthContext)
 
     UseTitle('myreviews')
     const {user} = useContext(AuthContext);
-    const [myReviews, setMyReviews] = useState([]);
     const [allReviews, setAllreviews] = useState([])
 
 
     useEffect(() => {
-      fetch(`https://wildlife-studio-server-jalalemon.vercel.app/allReviews?email=${user?.email}`)
-      // fetch("https://wildlife-studio-server-jalalemon.vercel.app/allReviews?email=web2@ph.com")
+      fetch(`https://wildlife-studio-server.vercel.app/allReviews?email=${user?.email}`)
+      // fetch("https://wildlife-studio-server.vercel.app/allReviews?email=web2@ph.com")
         .then((res) => res.json())
         .then((data) => setAllreviews(data));
     } , [user?.email])
     useEffect(() => {
         fetch(
-          `https://wildlife-studio-server-jalalemon.vercel.app/allReviews?email=${user?.email}`,
-
-
-          {
-    
-            //  headers: {
-            //     authorization: `Bearer ${localStorage.getItem('wildlife-token')}`
-                
-            // }
-          })
+          `https://wildlife-studio-server.vercel.app/allReviews?email=${user?.email}`)
           .then((res) =>  {
 
-          // if(res.status === 401 || res.status === 403){
-          //       logOut()
-          //   }
-            res.json();
+          if(res.status === 401 || res.status === 403){
+                 navigate('/');
+            }
+          
+           return res.json();
           })
-          .then((data) => console.log(data));
+          .then((data) => setAllreviews(data));
 
     }, [user?.email]);
 
@@ -53,7 +45,7 @@ const MyReviews = () => {
 const handleDelete = (id) => {
   const proceed = window.confirm("are your sure want to delete?");
   if (proceed) {
-    fetch(`https://wildlife-studio-server-jalalemon.vercel.app/allReviews/${id}`, {
+    fetch(`https://wildlife-studio-server.vercel.app/allReviews/${id}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("wildlife-token")}`,
@@ -64,7 +56,7 @@ const handleDelete = (id) => {
         console.log(data);
         if (data.deletedCount > 0) {
           toast("deleted successfully");
-          const remaining = allReviews.filter((odr) => odr._id !== id);
+          const remaining = allReviews?.filter((odr) => odr._id !== id);
           setAllreviews(remaining);
         }
       });
@@ -74,7 +66,7 @@ const handleDelete = (id) => {
 
 
     //  const handleUpdate = (id) => {
-    //    fetch(`https://wildlife-studio-server-jalalemon.vercel.app/allReviews/${id}`, {
+    //    fetch(`https://wildlife-studio-server.vercel.app/allReviews/${id}`, {
     //      method: "PUT",
     //      headers: {
     //        "content-type": "application/json",
