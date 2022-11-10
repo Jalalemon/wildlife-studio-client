@@ -17,13 +17,12 @@ const Header = () => {
   const handleLogOut = () => {
     logOut()
       .then()
-      toast.success('logOut successfully')
       .catch((error) => console.error(error));
+      toast.success('logOut successfully')
   };
 
   // header
   //
-toast('header')
   const menuItems = (
     <>
       <li className="font-semibold">

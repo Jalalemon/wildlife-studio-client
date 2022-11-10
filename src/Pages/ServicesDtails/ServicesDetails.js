@@ -14,7 +14,6 @@ const ServicesDetails = () => {
     const { name,_id, about,email, picture, balance } = detailsServices;
     console.log(_id );
 
-    toast('service details')
     // service details
     //
 

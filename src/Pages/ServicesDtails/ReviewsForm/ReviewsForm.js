@@ -19,15 +19,18 @@ const ReviewsForm = () => {
           const phone = form.phone.value;
           const message = form.message.value;
 
+            console.log(name);
           const allReview = {
             serviceId: _id,
             serviceName: name,
             balance,
+            address,
             names: name,
             customer: company,
             email,
             phone,
             message,
+
           };
           fetch("http://localhost:5000/allReviews", {
             method: "POST",

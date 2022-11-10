@@ -23,22 +23,24 @@ const MyReviews = () => {
 
 
           {
-            headers: {
-                authorization: `Bearer ${localStorage.getItem('wildlife-token')}`
+    
+    // 8.14        // headers: {
+            //     authorization: `Bearer ${localStorage.getItem('wildlife-token')}`
                 
-            }
+            // }
           })
           .then((res) =>  {
 
-            if(res.status === 401 || res.status === 403){
-                logOut()
-            }
+    //8.16        // if(res.status === 401 || res.status === 403){
+            //     logOut()
+            // }
             res.json();
           })
           .then((data) => setMyReviews(data));
 
     }, [user?.email]);
 
+   
 
 
 const handleDelete = (id) => {

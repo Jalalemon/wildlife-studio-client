@@ -61,12 +61,12 @@ toast.success("congrats! logged successfully");
 
 
   const handleGoogleSignIn = () =>{
-    toast.success("congrats! logged successfully");
-      signInGoogle()
-      .then((result) => {
-          const user = result.user;
-         
-        console.log(user);
+    signInGoogle()
+    .then((result) => {
+      const user = result.user;
+      
+      console.log(user);
+      toast.success("congrats! logged successfully");
         navigate(from, { replace: true });
       })
       .catch((error) => console.error(error));
@@ -137,7 +137,7 @@ toast.success("congrats! logged successfully");
             </button>
             <ToastContainer />
           </div>
-          <ToastContainer></ToastContainer>
+         
         </div>
       </div>
     </div>

@@ -5,11 +5,11 @@ import { AuthContext } from '../../Auth/AuthProvider/AuthProvider';
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const EditMyReviews = ({ reviews,handleUpdate, handleDelete}) => {
-    UseTitle('edirmyReviews')
+    UseTitle('editmyReviews')
   const { user } = useContext(AuthContext);
 
   const { _id, phone, message, email, serviceName, balance, name } = reviews;
-
+console.log(email);
 
 // editing reviews
 
