@@ -15,8 +15,15 @@ const MyReviews = () => {
     UseTitle('myreviews')
     const {user} = useContext(AuthContext);
     const [myReviews, setMyReviews] = useState([]);
+    const [allReviews, setAllreviews] = useState([])
 
 
+    useEffect(() => {
+      fetch(`http://localhost:5000/allReviews?email=${user?.email}`)
+      // fetch("http://localhost:5000/allReviews?email=web2@ph.com")
+        .then((res) => res.json())
+        .then((data) => setAllreviews(data));
+    } , [user?.email])
     useEffect(() => {
         fetch(
           `http://localhost:5000/allReviews?email=${user?.email}`,
@@ -24,19 +31,19 @@ const MyReviews = () => {
 
           {
     
-    // 8.14        // headers: {
+            //  headers: {
             //     authorization: `Bearer ${localStorage.getItem('wildlife-token')}`
                 
             // }
           })
           .then((res) =>  {
 
-    //8.16        // if(res.status === 401 || res.status === 403){
-            //     logOut()
-            // }
+          // if(res.status === 401 || res.status === 403){
+          //       logOut()
+          //   }
             res.json();
           })
-          .then((data) => setMyReviews(data));
+          .then((data) => console.log(data));
 
     }, [user?.email]);
 
@@ -48,17 +55,17 @@ const handleDelete = (id) => {
   if (proceed) {
     fetch(`http://localhost:5000/allReviews/${id}`, {
       method: "DELETE",
-    //   headers: {
-    //     authorization: `Bearer ${localStorage.getItem("geniusToken")}`,
-    //   },
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("wildlife-token")}`,
+      },
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
         if (data.deletedCount > 0) {
           toast("deleted successfully");
-          const remaining = myReviews.filter((odr) => odr._id !== id);
-          setMyReviews(remaining);
+          const remaining = allReviews.filter((odr) => odr._id !== id);
+          setAllreviews(remaining);
         }
       });
   }
@@ -91,14 +98,15 @@ const handleDelete = (id) => {
       <div>
         
         <div className='mx-auto text-3xl font-semibold text-orange-400'>
-          {myReviews?.length === 0 ? (
+         
+          {allReviews?.length === 0 ? (
             <p>You have no review</p>
           ) : (
             <p>Show Available review</p>
           )}
         </div>
         <div className="grid mx-auto gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          {myReviews?.map((reviews) => (
+          {allReviews?.map((reviews) => (
             <EditMyReviews
               key={reviews._id}
               reviews={reviews}

@@ -1,11 +1,20 @@
 `Wildlife Studio`
 
 
-## 1. -bullet  project name: Wildlife Studio
+## `1. project name: Wildlife Studio`
 
 ### created by Jalal uddin emon
 
-In the project directory,:
+In the project directory used deployed b6a11-service-review-client-side-Jalalemon created by GitHub Classroom:
+
+JavaScript
+93.6%
+ 
+CSS
+3.7%
+ 
+HTML
+2.7%,:
 
 ### `2. to create this website  i have used  react tailwind css frameWork`
 

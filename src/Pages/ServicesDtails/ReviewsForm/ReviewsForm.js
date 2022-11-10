@@ -85,7 +85,7 @@ const ReviewsForm = () => {
               name="email"
               className="input input-bordered input-ghost w-full"
               defaultValue={user?.email}
-              readOnly
+        
             />
           </div>
           <textarea
